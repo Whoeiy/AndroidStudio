@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">class11</string>
+    <string name="btn1">点击获得assers文件夹中的test.txt文件的内容</string>
+    <string name="btn2">点击访问assets文件夹中的test.html网页</string>
+    <string name="btn3">点击获得res/raw文件夹中test.txt文件的内容</string>
+</resources>

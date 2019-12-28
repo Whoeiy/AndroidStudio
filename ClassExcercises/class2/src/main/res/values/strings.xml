@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">class2</string>
+    <!--Images-->
+    <string name="desert">甜品</string>
+    <string name="gbjd">宫保鸡丁</string>
+    <string name="humburger">汉堡包</string>
+    <string name="hsr">红烧肉</string>
+    <string name="mljk">麻辣鸡块</string>
+    <string name="opera">甜品</string>
+    <string name="sandwhich">三明治</string>
+    <string name="szr">水煮肉</string>
+    <string name="souffle">舒芙蕾</string>
+    <string name="tiramisu">提拉米苏</string>
+    <string name="yxrs">鱼香肉丝</string>
+</resources>
