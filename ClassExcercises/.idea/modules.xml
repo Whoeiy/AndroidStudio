@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClassExcercises.iml" filepath="$PROJECT_DIR$/ClassExcercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class1/class1.iml" filepath="$PROJECT_DIR$/class1/class1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class11/class11.iml" filepath="$PROJECT_DIR$/class11/class11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class11contentprovider/class11contentprovider.iml" filepath="$PROJECT_DIR$/class11contentprovider/class11contentprovider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class2/class2.iml" filepath="$PROJECT_DIR$/class2/class2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class4/class4.iml" filepath="$PROJECT_DIR$/class4/class4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class5/class5.iml" filepath="$PROJECT_DIR$/class5/class5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class8/class8.iml" filepath="$PROJECT_DIR$/class8/class8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/class9/class9.iml" filepath="$PROJECT_DIR$/class9/class9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finalproject/finalproject.iml" filepath="$PROJECT_DIR$/finalproject/finalproject.iml" />
+    </modules>
+  </component>
+</project>
