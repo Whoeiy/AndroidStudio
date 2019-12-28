@@ -8,7 +8,7 @@
 
   DrinkDialogFragment.java
 
-- [ ] **Action**：饮品menu点击某按钮生成详情页的DialogFragment
+- [x] **Action**：饮品menu点击某按钮生成详情页的DialogFragment
 
   DrinkListFragment to DialogFragment
 
@@ -22,6 +22,4 @@
 - **Layout**：饮品详情页布局美化
   - 左上角的ImageButton并没有设点击事件，动作是退出这个dialog
 - **Drawable**：改图片的名字
-- 
-
-- [ ] 
+ 
