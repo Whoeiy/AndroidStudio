@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 饮品列表项 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 饮品图片 -->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_margin="5dp"
+        android:id="@+id/drink_item_drink_img"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp">
+
+        <!-- 饮品名称 -->
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="星冰乐"
+            android:textSize="16sp"
+            android:id="@+id/drink_item_drink_name"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 饮品价格 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥ 100"
+                android:textSize="16sp"
+                android:textColor="#FF3300"
+                android:id="@+id/drink_item_drink_price"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_alignParentRight="true">
+
+                <!-- 减少按钮 -->
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:visibility="visible"
+                    android:background="#622"
+                    android:id="@+id/drink_item_drink_minus"/>
+
+                <!-- 已选择的数量 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:minWidth="20dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:id="@+id/drink_item_drink_num"/>
+
+                <!-- 添加按钮-->
+                <TextView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:visibility="visible"
+                    android:background="#949"
+                    android:id="@+id/drink_item_drink_add"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
