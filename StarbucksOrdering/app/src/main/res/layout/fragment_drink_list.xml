@@ -1,12 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:id="@+id/drink_list_containerLayout" >
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/drink_list_btn"
-        android:text="details!"/>
+    <!--<include-->
+        <!--/>-->
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#525252"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <!-- 购物车图标 -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="#888888"
+                android:layout_centerInParent="true"
+                android:id="@+id/drink_list_cart_img" />
+
+            <!-- 购物车内数量的标识-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:textColor="#000"
+                android:text="1"
+                android:textSize="12sp"
+                android:layout_alignParentRight="true"
+                android:background="#fafa11"
+                android:id="@+id/drink_list_count_in_cart"/>
+            <!--android:visibility="gone"-->
+
+        </RelativeLayout>
+
+        <!-- 购物车内总金额 -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="¥ 99"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:id="@+id/drink_list_total_price_in_cart" />
+
+        <!-- ¥100元起送 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_marginRight="100dp"
+            android:text="¥100元起送"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:id="@+id/drink_list_dilivery_standard"/>
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:gravity="center"
+            android:background="#22c222"
+            android:text="去结算"
+            android:textSize="18sp"
+            android:onClick="onClick"
+            android:clickable="true"
+            android:id="@+id/drink_list_go_pay" />
+
+    </LinearLayout>
+
+
+
+
+
+
+    <!-- 生成详情页dialog -->
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/drink_list_btn"-->
+        <!--android:text="details!"/>-->
+
+</RelativeLayout>
