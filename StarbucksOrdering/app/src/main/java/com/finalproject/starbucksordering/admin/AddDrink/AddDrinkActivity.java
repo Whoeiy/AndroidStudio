@@ -1,12 +1,13 @@
-package com.finalproject.starbucksordering.activity.Menu;
+package com.finalproject.starbucksordering.admin.AddDrink;
 
 import androidx.fragment.app.Fragment;
 
 import com.finalproject.starbucksordering.SingleFragmentActivity;
 
-public class DrinkListActivity extends SingleFragmentActivity {
+public class AddDrinkActivity extends SingleFragmentActivity {
+
     @Override
     protected Fragment createFragment() {
-        return new DrinkListFragment();
+        return new AddDrinkFragment();
     }
 }

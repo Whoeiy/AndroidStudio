@@ -6,8 +6,11 @@
     android:background="#f2f2f2"
     android:id="@+id/drink_list_containerLayout" >
 
-    <!--<include-->
-        <!--/>-->
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/fragment_drink_list_middle"
+        android:layout_above="@+id/drink_list_bottom" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +18,7 @@
         android:background="#525252"
         android:gravity="center_vertical"
         android:layout_alignParentBottom="true"
-        >
+        android:id="@+id/drink_list_bottom" >
 
         <RelativeLayout
             android:layout_width="60dp"
