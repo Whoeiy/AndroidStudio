@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="注 册"
+        android:textSize="32sp"
+        android:textColor="@color/button"
+        android:textStyle="bold"
+        android:id="@+id/welcome_register_interface_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/welcome_register_interface_title"
+        android:id="@+id/admin_add_drink_info" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#eee" />
+
+        <!-- Username -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/registerusername"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/welcome_register_interface_username"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/registerusername"
+                android:layout_toRightOf="@id/welcome_register_interface_username"
+                android:id="@+id/welcome_register_interface_username_et"/>
+        </RelativeLayout>
+
+        <!--Name-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/registername"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/welcome_register_interface_name"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/registername"
+                android:layout_toRightOf="@id/welcome_register_interface_name"
+                android:id="@+id/welcome_register_interface_name_et"/>
+        </RelativeLayout>
+
+        <!--Password-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/registerpassword"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/welcome_register_interface_password"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="textPassword"
+                android:hint="@string/registerpassword"
+                android:layout_toRightOf="@id/welcome_register_interface_password"
+                android:id="@+id/welcome_register_interface_password_et"/>
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#eee" />
+
+        <!--Gender-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/registergender"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/welcome_register_interface_gender"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@id/welcome_register_interface_gender"
+                android:paddingLeft="20dp"
+                android:id="@+id/welcome_register_interface_gender_spinner"/>
+
+        </RelativeLayout>
+
+        <!--BirthDay-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/registerbirthday"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/welcome_register_interface_birthday"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@id/welcome_register_interface_birthday"
+                android:paddingLeft="20dp"
+                android:id="@+id/welcome_register_interface_birthday_year_spinner"/>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:text="年"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:layout_toRightOf="@id/welcome_register_interface_birthday_year_spinner"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/welcome_register_interface_birthday_year"   />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/welcome_register_interface_birthday_month_spinner"
+                android:layout_toRightOf="@id/welcome_register_interface_birthday_year" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:text="月"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:layout_toRightOf="@id/welcome_register_interface_birthday_month_spinner"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/welcome_register_interface_birthday_month"   />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#eee" />
+
+        <!-- Detail -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/registerphone"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/welcome_register_interface_phone"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/registerphone"
+                android:layout_toRightOf="@id/welcome_register_interface_phone"
+                android:id="@+id/welcome_register_interface_phone_et"/>
+        </RelativeLayout>
+
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:background="#eee" />-->
+
+        <!-- Add -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Add"
+            android:textSize="16sp"
+            android:textColor="@color/button"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:id="@+id/welcome_register_btn" />
+
+    </LinearLayout>
+</RelativeLayout>

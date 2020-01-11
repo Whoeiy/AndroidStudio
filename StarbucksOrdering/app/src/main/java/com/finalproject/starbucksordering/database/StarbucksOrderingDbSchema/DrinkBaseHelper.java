@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.finalproject.starbucksordering.a.model.Type;
+import com.finalproject.starbucksordering.a.model.User;
 import com.finalproject.starbucksordering.database.StarbucksOrderingDbSchema.StarbucksOrderingDbSchema.DrinkTable;
 
 import java.util.UUID;
@@ -48,6 +49,18 @@ public class DrinkBaseHelper extends SQLiteOpenHelper {
                 DrinkTable.Cols.IMAGE +
                 ")"
         );
+
+        db.execSQL("create table " + UserTable.TNAME + "("+
+                        "_id integer primary key autoincrement, " +
+                        UserTable.Cols.USERNAME + ", " +
+                        UserTable.Cols.NAME + ", " +
+                        UserTable.Cols.PASSWORD + ", " +
+                        UserTable.Cols.GENDER + ", " +
+                        UserTable.Cols.YEAR + ", " +
+                        UserTable.Cols.MONTH + ", " +
+                        UserTable.Cols.PHONE +
+                        ")"
+                );
     }
 
     @Override

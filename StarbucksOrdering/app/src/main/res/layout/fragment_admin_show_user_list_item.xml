@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center_horizontal"
+    android:paddingTop="20dp">
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:background="@drawable/rounded_show">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:id="@+id/admin_show_user_list_item_basic_info">
+
+        <!-- 用户名 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="170811008"
+            android:textSize="18sp"
+            android:textColor="@color/button"
+            android:textStyle="bold"
+            android:id="@+id/admin_show_user_list_item_Username"/>
+
+        <!-- 姓名 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="于越"
+            android:textSize="16sp"
+            android:textColor="@color/users_name"
+            android:id="@+id/admin_show_user_list_item_Name"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shanchu"
+        android:padding="10dp"
+        android:paddingTop="5dp"
+        android:id="@+id/admin_show_user_list_item_DeleteBtn"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

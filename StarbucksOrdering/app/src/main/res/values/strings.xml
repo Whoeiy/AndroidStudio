@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">StarbucksOrdering</string>
+
+    <!--welcome-->
+    <string name="made_by">Made By</string>
+    <string name="name">于越（170811008）</string>
+    <string name="myclass">2017级计算机科学与技术1班</string>
+    <string name="signin">登录</string>
+    <string name="new_user">新用户</string>
+
+    <!--register-->
+    <string name="registertitle">注册</string>
+    <string name="registerusername">用户名</string>
+    <string name="registername">姓名</string>
+    <string name="registerpassword">密码</string>
+    <string name="registergender">性别</string>
+    <string name="registerbirthday">出生年月</string>
+    <string name="registerphone">手机号码</string>
+
+
+    <!--login choose character-->
+    <string name="user">星巴克会员</string>
+    <string name="admin">工作人员</string>
+
+    <!--login interface-->
+    <string name="tip_account">请输入用户名</string>
+    <string name="tip_password">请输入密码</string>
+    <string name="forget_pass">忘记密码</string>
+    <string name="title_activity_admin_func">AdminFuncActivity</string>
+    <string name="title_home">用户</string>
+    <string name="title_dashboard">菜品</string>
+    <string name="title_notifications">我的</string>
 </resources>
