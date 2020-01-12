@@ -2,6 +2,7 @@ package com.finalproject.starbucksordering.a.model;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.finalproject.starbucksordering.database.StarbucksOrderingDbSchema.DrinkBaseHelper;
@@ -36,6 +37,52 @@ public class DrinkLab {
     public List<Drink> getDrinks(){
         return new ArrayList<>();
     }
+
+    public List<Drink> getDrinksByType(String type){
+        List<Drink> drinks = new ArrayList<>();
+        DrinkCursorWrapper cursor = queryDrinkByType(type);
+
+        try{
+            cursor.moveToFirst();
+            while(!cursor.isAfterLast()){
+                drinks.add(cursor.getDrink());
+                cursor.moveToNext();
+            }
+        }finally {
+            cursor.close();
+        }
+
+        return drinks;
+    }
+
+    private DrinkCursorWrapper queryDrinkByType(String type){
+        Cursor cursor = mDatabase.rawQuery("select * from drinks where type = ?", new String[]{type});
+        return new DrinkCursorWrapper(cursor);
+    }
+
+    public List<Drink> getDrinksByName(String name){
+        List<Drink> drinks = new ArrayList<>();
+        DrinkCursorWrapper cursor = queryDrinkByName(name);
+
+        try{
+            cursor.moveToFirst();
+            while(!cursor.isAfterLast()){
+                drinks.add(cursor.getDrink());
+                cursor.moveToNext();
+            }
+        }finally {
+            cursor.close();
+        }
+
+        return drinks;
+    }
+
+    private DrinkCursorWrapper queryDrinkByName(String name) {
+        Cursor cursor = mDatabase.rawQuery("select * from drinks where name = ?", new String[]{name});
+        return new DrinkCursorWrapper(cursor);
+    }
+
+
 
 
     // 插入记录
@@ -73,6 +120,11 @@ public class DrinkLab {
 
         return values;
 
+    }
+
+    // 删除 by uuid
+    public void deleteDrink(String name){
+        mDatabase.execSQL("delete from drinks where name = ?", new String[]{name});
     }
 
 

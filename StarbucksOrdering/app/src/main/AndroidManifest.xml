@@ -31,8 +31,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".admin.AdminFuncActivity" >
-        </activity>
+        <activity android:name=".admin.AdminFuncActivity" ></activity>
+
+        <activity android:name=".admin.DrinkManage.AddDrinkActivity"></activity>
+
+        <activity android:name=".user.MenuWithCart.UserFuncActivity"></activity>
     </application>
 
 </manifest>

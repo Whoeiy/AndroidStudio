@@ -1,4 +1,4 @@
-package com.finalproject.starbucksordering.admin.AddDrink;
+package com.finalproject.starbucksordering.admin.DrinkManage;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import com.finalproject.starbucksordering.a.model.Drink;
 import com.finalproject.starbucksordering.a.model.DrinkLab;
 import com.finalproject.starbucksordering.a.model.Type;
 import com.finalproject.starbucksordering.a.model.TypeLab;
+import com.finalproject.starbucksordering.admin.AdminFuncActivity;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -51,6 +53,7 @@ public class AddDrinkFragment extends Fragment {
     private TextView mShowType;
     private EditText mDrinkDetail;
     private Button mAdd;
+    private ImageButton mExitImageButton;
 
     // 1. 实现fragment声明周期方法
     @Override
@@ -191,6 +194,7 @@ public class AddDrinkFragment extends Fragment {
 
         //Add TextView Button
         mAdd = (Button) v.findViewById(R.id.admin_add_drink_btn);
+
         mAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -201,7 +205,12 @@ public class AddDrinkFragment extends Fragment {
                 }
                 else{
                     mDrinkLab = DrinkLab.get(getActivity());
-                    mDrinkLab.addDrink(mDrink);
+                    List<Drink> selectdrinks = mDrinkLab.getDrinksByName(mDrink.getName());
+                    if(selectdrinks.size() != 0){
+                        Toast.makeText(getActivity(), "该菜品已存在，请重新填写！", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        mDrinkLab.addDrink(mDrink);
 //                    List<String> str = new ArrayList<>();
 //                    str.add(mDrink.getId().toString());
 //                    str.add(mDrink.getName());
@@ -209,8 +218,25 @@ public class AddDrinkFragment extends Fragment {
 //                    str.add(mDrink.getPrice().toString());
 //                    str.add(mDrink.getDetail());
 //                    mDrinkLab.addDrink(str);
-                    Toast.makeText(getActivity(), "加入成功！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "加入成功！", Toast.LENGTH_SHORT).show();
+                        getActivity().getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.fragment_container, new AddDrinkFragment(), null)
+                                .addToBackStack(null)
+                                .commit();
+                    }
                 }
+            }
+        });
+
+
+        // ImageButton - Exit
+        mExitImageButton = (ImageButton) v.findViewById(R.id.admin_add_drink_exit_btn);
+        mExitImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AdminFuncActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -269,6 +295,5 @@ public class AddDrinkFragment extends Fragment {
 
         }
     };
-
 
 }

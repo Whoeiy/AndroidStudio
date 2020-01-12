@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:id="@+id/user_title_search_bar">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:elevation="4dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_titlebar"
+        android:background="#fff" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:id="@+id/etsearch"
+                android:lines="1"
+                android:hint="搜索"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:background="@drawable/rounded_input"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+</LinearLayout>

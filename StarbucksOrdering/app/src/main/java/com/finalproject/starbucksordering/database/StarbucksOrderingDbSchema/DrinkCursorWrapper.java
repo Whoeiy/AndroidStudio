@@ -63,6 +63,13 @@ public class DrinkCursorWrapper extends CursorWrapper {
         String detail = getString(getColumnIndex(DrinkTable.Cols.DETAIL));
         String image = getString(getColumnIndex(DrinkTable.Cols.IMAGE));
 
+        drink.setName(name);
+        drink.setType(type);
+        drink.setHot(false);
+        drink.setPrice(price);
+        drink.setDetail(detail);
+        drink.setImage(image);
+
         return drink;
 
     }

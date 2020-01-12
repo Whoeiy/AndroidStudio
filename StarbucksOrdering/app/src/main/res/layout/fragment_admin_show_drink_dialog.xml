@@ -4,7 +4,8 @@
     <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:background="@drawable/icon_exit"/>
+        android:background="@drawable/icon_exit"
+        android:id="@+id/admin_show_drink_dialog_exit_btn"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:id="@+id/ttttttt">
         <ImageView
             android:layout_width="match_parent"
-            android:id="@+id/drink_dialog_img"
+            android:id="@+id/admin_drink_dialog_img"
             android:layout_height="234dp" />
 
         <TextView
@@ -24,7 +25,7 @@
             android:text="星巴克咖啡"
             android:textSize="20sp"
             android:textColor="@color/loginbutton"
-            android:id="@+id/drink_dialog_name"
+            android:id="@+id/admin_drink_dialog_name"
             />
 
         <TextView
@@ -34,7 +35,7 @@
             android:layout_marginTop="10dp"
             android:text="很好喝，yeah！"
             android:textSize="18sp"
-            android:id="@+id/drink_dialog_detail"
+            android:id="@+id/admin_drink_dialog_detail"
             />
 
     </LinearLayout>
@@ -47,7 +48,7 @@
         android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
-        android:id="@+id/drink_dialog_btn_add"
-        android:text="加入购物车" />
+        android:id="@+id/admin_drink_dialog_btn_commit"
+        android:text="确认" />
 
 </RelativeLayout>

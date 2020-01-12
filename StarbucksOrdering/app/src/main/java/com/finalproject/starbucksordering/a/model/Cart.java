@@ -1,11 +1,11 @@
-package com.finalproject.starbucksordering.user.MenuWithCart;
+package com.finalproject.starbucksordering.a.model;
 
 import java.util.UUID;
 
 public class Cart {
     private UUID mId;
-    private UUID mDrinkId;
-    private String mName;
+    private String mDrinkName;
+    private String mUsername;
     private Double mPrice;
     private Integer mNum;
 
@@ -17,24 +17,20 @@ public class Cart {
         return mId;
     }
 
-    public void setId(UUID id) {
-        mId = id;
+    public String getDrinkName() {
+        return mDrinkName;
     }
 
-    public UUID getDrinkId() {
-        return mDrinkId;
+    public void setDrinkName(String drinkName) {
+        mDrinkName = drinkName;
     }
 
-    public void setDrinkId(UUID drinkId) {
-        mDrinkId = drinkId;
+    public String getUsername() {
+        return mUsername;
     }
 
-    public String getName() {
-        return mName;
-    }
-
-    public void setName(String name) {
-        mName = name;
+    public void setUsername(String username) {
+        mUsername = username;
     }
 
     public Double getPrice() {

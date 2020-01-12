@@ -1,4 +1,4 @@
-package com.finalproject.starbucksordering.admin.AddDrink;
+package com.finalproject.starbucksordering.admin.DrinkManage;
 
 import androidx.fragment.app.Fragment;
 

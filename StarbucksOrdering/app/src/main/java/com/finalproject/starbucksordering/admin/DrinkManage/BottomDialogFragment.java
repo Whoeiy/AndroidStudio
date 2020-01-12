@@ -1,14 +1,11 @@
-package com.finalproject.starbucksordering.admin.AddDrink;
+package com.finalproject.starbucksordering.admin.DrinkManage;
 
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -22,9 +19,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import com.finalproject.starbucksordering.R;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import static android.app.Activity.RESULT_CANCELED;
 

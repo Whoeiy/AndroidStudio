@@ -38,4 +38,32 @@ public class StarbucksOrderingDbSchema {
             public static final String PHONE = "phone";
         }
     }
+
+    public static final class CartTable{
+        public static final String TNAME = "carts";
+
+        public static final class Cols{
+            public static final String UUID = "uuid";
+            public static final String DRINKNAME = "drinkname";
+            public static final String USERNAME = "username";
+            public static final String PRICE = "price";
+            public static final String NUM = "num";
+        }
+    }
+
+    public static final class OrderTable{
+        public static final String  TNAME = "orders";
+
+        public static final class Cols{
+            public static final String UUID = "uuid";
+            public static final String ORDERNUM = "ordernum";
+            public static final String USERNAME = "username";
+            public static final String DATETIME = "datetime";
+            public static final String INTRODUCTION = "introduction";
+            public static final String DRINKNAME = "drinkname";
+            public static final String DRINKPRICE = "drinkprice";
+            public static final String DRINKNUM = "drinknum";
+        }
+
+    }
 }

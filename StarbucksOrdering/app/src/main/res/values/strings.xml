@@ -25,9 +25,21 @@
     <!--login interface-->
     <string name="tip_account">请输入用户名</string>
     <string name="tip_password">请输入密码</string>
-    <string name="forget_pass">忘记密码</string>
+    <string name="forget_pass">注册</string>
     <string name="title_activity_admin_func">AdminFuncActivity</string>
     <string name="title_home">用户</string>
     <string name="title_dashboard">菜品</string>
     <string name="title_notifications">我的</string>
+
+
+    <!--show user detail dialog-->
+    <string name="user_dialog_title">用户信息</string>
+    <string name="user_dialog_username">用户名：</string>
+    <string name="user_dialog_name">姓名：</string>
+    <string name="user_dialog_gender">性别：</string>
+    <string name="user_dialog_birthday">出生年月：</string>
+    <string name="user_dialog_phone">电话号码：</string>
+    <string name="user_dialog_commit_btn">确认</string>
+    <string name="user_dialog_delete_btn">删除</string>
+
 </resources>

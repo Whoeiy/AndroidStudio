@@ -1,25 +1,23 @@
-package com.finalproject.starbucksordering.admin;
+package com.finalproject.starbucksordering.user.MenuWithCart;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.finalproject.starbucksordering.R;
-import com.finalproject.starbucksordering.admin.DrinkManage.AddDrinkFragment;
 import com.finalproject.starbucksordering.admin.DrinkManage.ShowDrinksListFragment;
 import com.finalproject.starbucksordering.admin.UsersManage.ShowUsersListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.view.MenuItem;
-import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminFuncActivity extends AppCompatActivity{
+public class UserFuncActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private BottomNavigationView bottomNavigationView;
     private Fragment mCurrentFragment = null;
@@ -37,7 +35,7 @@ public class AdminFuncActivity extends AppCompatActivity{
                     showFragment(0);
                     return true;
                 case R.id.navigation_dashboard:
-                    showFragment(1);
+//                    showFragment(1);
                     return true;
                 case R.id.navigation_notifications:
                     return true;
@@ -67,8 +65,8 @@ public class AdminFuncActivity extends AppCompatActivity{
         } else {
             fragments = new ArrayList<>();
         }
-        fragments.add(new ShowUsersListFragment());
-        fragments.add(new ShowDrinksListFragment());
+        fragments.add(new ShowDrinkMenuListFragment());
+//        fragments.add(new ShowDrinksListFragment());
 //        fragments.add(new FragmentTab3());
 //        fragments.add(new FragmentTab4());
     }
@@ -91,5 +89,4 @@ public class AdminFuncActivity extends AppCompatActivity{
             }
         }
     }
-
 }

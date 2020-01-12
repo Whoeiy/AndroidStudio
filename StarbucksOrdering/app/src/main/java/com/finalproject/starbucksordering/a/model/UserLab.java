@@ -53,10 +53,9 @@ public class UserLab {
 
     }
 
-    // 删
+    // 删 - 用户管理删除该用户信息
     public void deleteUser(String username){
-        String[] arr = {username};
-        mDatabase.delete(UserTable.TNAME, UserTable.Cols.USERNAME, arr);
+        mDatabase.execSQL("delete from users where username = ?", new String[]{username});
     }
 
 
@@ -89,4 +88,29 @@ public class UserLab {
         }
         return users;
     }
+
+    // 用户管理获取用户详细信息
+    public User getUser(String username){
+        User user = new User();
+        DrinkCursorWrapper cursor = queryUser(username);
+
+        try{
+            cursor.moveToFirst();
+            while(!cursor.isAfterLast()){
+                user = cursor.getUser();
+                cursor.moveToNext();
+            }
+        }finally {
+            cursor.close();
+        }
+        return user;
+    }
+
+    private DrinkCursorWrapper queryUser(String username){
+        Cursor cursor = mDatabase.rawQuery("select * from users where username = ?", new String[]{username});
+        return new DrinkCursorWrapper(cursor);
+    }
+
+    //
+
 }
