@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">CourseSelectingSystem</string>
+
+    <!-- url -->
+
+    <string name="fp_login_url">http://192.168.0.101:8080/JSPCls/registration/LoginServlet</string>
+
+    <!--welcome-->
+    <string name="made_by">Made By</string>
+    <string name="name">于越（170811008）</string>
+    <string name="myclass">2017级计算机科学与技术1班</string>
+    <string name="signin">登录</string>
+    <string name="new_user">新用户</string>
+
+    <!-- register interface -->
+    <string name="registertitle">注册</string>
+    <string name="registerusernum">编号</string>
+    <string name="registername">姓名</string>
+    <string name="registerpassword">密码</string>
+    <string name="registeridentify">身份</string>
+    <string name="registerclass">班级</string>
+    <string name="registerphone">联系方式</string>
+
+    <!-- login interface -->
+    <string name="tip_account">请输入用户名</string>
+    <string name="tip_password">请输入密码</string>
+    <string name="forget_pass">注册</string>
+    <string name="title_activity_admin_func">AdminFuncActivity</string>
+    <string name="title_home">申请课程</string>
+    <string name="title_notifications">我的课程</string>
+    <string name="title_activity_teacher">TeacherActivity</string>
 </resources>

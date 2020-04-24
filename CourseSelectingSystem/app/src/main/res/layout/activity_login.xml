@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="欢迎使用学生选课系统"
+        android:textColor="@color/loginbutton"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="28sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="登 录"
+        android:textColor="@color/button"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:id="@+id/welcome_login_interface_title"/>
+
+    <EditText
+        android:id="@+id/welcome_login_interface_account_input"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tip_account"
+        android:textColorHint="@color/logintext"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_input"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/welcome_login_interface_password_input"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/rounded_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tip_password"
+        android:textColorHint="@color/logintext"
+        android:inputType="textPassword"
+        android:layout_below="@id/welcome_login_interface_account_input"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/welcome_login_interface_btn_login"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signin"
+        android:textColor="#eee"
+        android:layout_below="@id/welcome_login_interface_password_input"
+        android:layout_centerHorizontal="true"
+        android:background="@color/button"/>
+
+    <Button
+        android:id="@+id/welcome_login_interface_btn_forget_pass"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/forget_pass"
+        android:textColor="@color/loginbutton"
+        android:background="@color/loginInput"
+        android:layout_below="@id/welcome_login_interface_btn_login"
+        android:layout_centerHorizontal="true"
+
+        />
+</RelativeLayout>

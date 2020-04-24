@@ -3,4 +3,15 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--welcome-->
+
+    <color name="welcomeBackground">#5EA767</color>
+    <color name="welcomeMyinfo">#31572A</color>
+    <color name="button">#00684D</color>
+
+    <!-- login interface -->
+    <color name="loginInput">#0e000000</color>
+    <color name="logintext">#96989B</color>
+    <color name="loginbutton">#525252</color>
 </resources>
