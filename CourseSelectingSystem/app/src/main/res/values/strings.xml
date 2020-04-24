@@ -3,7 +3,9 @@
 
     <!-- url -->
 
-    <string name="fp_login_url">http://192.168.0.101:8080/JSPCls/registration/LoginServlet</string>
+    <string name="fp_register_url">http://192.168.0.103:8080/SelectingSys/RegisterServlet</string>
+    <string name="fp_login_url">http://192.168.0.103:8080/SelectingSys/LoginServlet</string>
+
 
     <!--welcome-->
     <string name="made_by">Made By</string>

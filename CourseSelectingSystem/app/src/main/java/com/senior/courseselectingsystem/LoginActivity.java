@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mUseridEditText; //Username
     private EditText mPasswordEditText; //Password
     private Button mSubmmitButton;   //login
-    private Button mForgetButton;   //forget
+    private Button mRegisterButton;   //forget
 
     //
     private String num, pswd;
@@ -85,5 +85,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     });
+
+
+        mRegisterButton = (Button) findViewById(R.id.welcome_login_interface_btn_register);
+        mRegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

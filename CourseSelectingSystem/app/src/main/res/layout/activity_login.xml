@@ -65,7 +65,7 @@
         android:background="@color/button"/>
 
     <Button
-        android:id="@+id/welcome_login_interface_btn_forget_pass"
+        android:id="@+id/welcome_login_interface_btn_register"
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:layout_width="match_parent"

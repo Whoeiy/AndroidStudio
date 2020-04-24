@@ -47,7 +47,7 @@
                 android:layout_height="50dp"
                 android:hint="@string/registerusernum"
                 android:layout_toRightOf="@id/welcome_register_interface_usernum"
-                android:id="@+id/welcome_register_interface_username_et"/>
+                android:id="@+id/welcome_register_interface_usernum_et"/>
         </RelativeLayout>
 
         <!--Name-->
@@ -115,21 +115,22 @@
                 android:text="@string/registeridentify"
                 android:textSize="18dp"
                 android:gravity="center"
-                android:id="@+id/welcome_register_interface_gender"/>
+                android:id="@+id/welcome_register_interface_identity"/>
 
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_toRightOf="@id/welcome_register_interface_gender"
+                android:layout_toRightOf="@id/welcome_register_interface_identity"
                 android:paddingLeft="20dp"
-                android:id="@+id/welcome_register_interface_identify_spinner"/>
+                android:id="@+id/welcome_register_interface_identity_spinner"/>
 
         </RelativeLayout>
 
-        <!--BirthDay-->
+        <!--Class-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_marginHorizontal="20dp">
 
             <TextView
@@ -138,12 +139,12 @@
                 android:text="@string/registerclass"
                 android:textSize="18dp"
                 android:gravity="center"
-                android:id="@+id/welcome_register_interface_birthday"/>
+                android:id="@+id/welcome_register_interface_class"/>
 
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_toRightOf="@id/welcome_register_interface_birthday"
+                android:layout_toRightOf="@id/welcome_register_interface_class"
                 android:paddingLeft="20dp"
                 android:id="@+id/welcome_register_interface_class_spinner"/>
         </RelativeLayout>
