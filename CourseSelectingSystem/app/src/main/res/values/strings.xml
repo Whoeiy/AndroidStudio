@@ -5,6 +5,8 @@
 
     <string name="fp_register_url">http://192.168.0.103:8080/SelectingSys/RegisterServlet</string>
     <string name="fp_login_url">http://192.168.0.103:8080/SelectingSys/LoginServlet</string>
+    <string name="fp_addcourse_url">http://192.168.0.103:8080/SelectingSys/AddCourseServlet</string>
+    <string name="fp_showcourselist_url">http://192.168.0.103:8080/SelectingSys/ShowCourseListServlet</string>
 
 
     <!--welcome-->
@@ -18,7 +20,7 @@
     <string name="registertitle">注册</string>
     <string name="registerusernum">编号</string>
     <string name="registername">姓名</string>
-    <string name="registerpassword">密码</string>
+    <string name="registerpswd">密码</string>
     <string name="registeridentify">身份</string>
     <string name="registerclass">班级</string>
     <string name="registerphone">联系方式</string>
@@ -31,4 +33,11 @@
     <string name="title_home">申请课程</string>
     <string name="title_notifications">我的课程</string>
     <string name="title_activity_teacher">TeacherActivity</string>
+
+    <!-- teacher - add course interface -->
+    <string name="crsname">课程名称</string>
+    <string name="crsuplimit">课程人数</string>
+    <string name="crsdescrip">课程简介</string>
+    <string name="title_activity_student">StudentActivity</string>
+    <string name="title_dashboard">Dashboard</string>
 </resources>

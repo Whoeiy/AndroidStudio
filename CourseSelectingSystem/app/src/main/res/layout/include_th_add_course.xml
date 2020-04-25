@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="申请课程"
+        android:textSize="32sp"
+        android:textColor="@color/button"
+        android:textStyle="bold"
+        android:id="@+id/add_course_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/add_course_title"
+        android:id="@+id/add_course_ll" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#eee" />
+
+        <!-- Username -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/crsname"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/add_course_name"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@id/add_course_name"
+                android:id="@+id/add_course_name_et"/>
+        </RelativeLayout>
+
+        <!--Name-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/crsuplimit"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:id="@+id/add_course_uplimit"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_toRightOf="@id/add_course_uplimit"
+                android:id="@+id/add_course_uplimit_et"/>
+        </RelativeLayout>
+
+        <!--Password-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="90dp"
+                android:text="@string/crsdescrip"
+                android:textSize="18dp"
+                android:gravity="center_horizontal"
+                android:id="@+id/add_course_descrip"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:inputType="textMultiLine"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_bg"
+                android:layout_toRightOf="@id/add_course_descrip"
+                android:id="@+id/add_course_descrip_et"/>
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#eee" />
+
+
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="10dp"-->
+        <!--android:background="#eee" />-->
+
+        <!-- Add -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Add"
+            android:textSize="16sp"
+            android:textColor="@color/button"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:id="@+id/add_course_btn" />
+
+    </LinearLayout>
+</RelativeLayout>

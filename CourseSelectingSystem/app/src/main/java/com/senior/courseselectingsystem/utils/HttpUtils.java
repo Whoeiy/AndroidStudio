@@ -50,7 +50,7 @@ public class HttpUtils {
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String line;
             while((line = reader.readLine()) != null){
-                result += line + "\n";
+                result += line;
             }
             // 3.3 关闭输入流
             reader.close();     // 关闭缓冲流，后打开的先关闭

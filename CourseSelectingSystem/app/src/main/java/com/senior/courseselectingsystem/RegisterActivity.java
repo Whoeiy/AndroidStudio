@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
 //            tv_res.setText(msg.obj.toString());
             backstr = msg.obj.toString();
             Toast.makeText(RegisterActivity.this, backstr, Toast.LENGTH_SHORT).show();
-            if(backstr.equals("注册成功\n")){
+            if(backstr.equals("注册成功")){
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
@@ -248,7 +248,6 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
                     param = newUser.toString();
-                    String tmp = "123";
 
                     // 直接实例化一个Thread对象
                     new Thread(new Runnable() {

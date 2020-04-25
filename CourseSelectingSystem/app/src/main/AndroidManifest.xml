@@ -16,8 +16,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".student.StudentActivity"
+            android:label="@string/title_activity_student"></activity>
+        <activity
             android:name=".TeacherActivity"
-            android:label="@string/title_activity_teacher"></activity>
+            android:label="@string/title_activity_teacher" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

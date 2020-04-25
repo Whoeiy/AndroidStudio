@@ -81,7 +81,7 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:text="@string/registerpassword"
+                android:text="@string/registerpswd"
                 android:textSize="18dp"
                 android:gravity="center"
                 android:id="@+id/welcome_register_interface_password"/>
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="textPassword"
-                android:hint="@string/registerpassword"
+                android:hint="@string/registerpswd"
                 android:layout_toRightOf="@id/welcome_register_interface_password"
                 android:id="@+id/welcome_register_interface_password_et"/>
         </RelativeLayout>
