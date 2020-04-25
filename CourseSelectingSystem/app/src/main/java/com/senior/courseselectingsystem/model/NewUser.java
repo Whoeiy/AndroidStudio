@@ -64,4 +64,10 @@ public class NewUser {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    @Override
+    public String toString() {
+        return "num=" + num + "&name=" + name + "&pswd=" + pswd + "&identity=" + identity
+                + "&cls=" + cls + "&contact=" + contact;
+    }
 }
