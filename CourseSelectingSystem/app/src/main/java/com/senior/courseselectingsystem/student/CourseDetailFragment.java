@@ -97,7 +97,7 @@ public class CourseDetailFragment extends Fragment {
             mButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    onButtonPressed(mCourse.getNum());
                 }
             });
         }

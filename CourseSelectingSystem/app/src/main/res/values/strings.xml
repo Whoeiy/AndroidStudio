@@ -43,7 +43,6 @@
     <string name="title_activity_student">StudentActivity</string>
     <string name="title_dashboard">Dashboard</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="fg_course_name">课程名称：</string>
     <string name="fg_course_teacher">授课教师：</string>
     <string name="fg_course_descrip">课程简介：</string>

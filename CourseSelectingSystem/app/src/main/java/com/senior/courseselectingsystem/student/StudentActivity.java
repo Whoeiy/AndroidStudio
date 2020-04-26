@@ -43,7 +43,6 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
     private TextView mTextMessage;
     private Fragment mCourseFragment;
     private FragmentManager manager;
-    private FragmentTransaction transaction;
 
     private String stunum, backstr;
     private Course mSelectedCrs;
@@ -94,6 +93,7 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
 
                     CourseFragment courseFragment = new CourseFragment();
                     courseFragment.setArguments(bundle);
+                    FragmentTransaction transaction = manager.beginTransaction();
                     transaction.add(R.id.container_for_fragment, courseFragment).addToBackStack(null).commit();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -119,6 +119,7 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
 
             CourseDetailFragment courseDetailFragment = new CourseDetailFragment();
             courseDetailFragment.setArguments(bundle);
+            FragmentTransaction transaction = manager.beginTransaction();
             transaction.add(R.id.container_for_fragment, courseDetailFragment).addToBackStack(null).commit();
         }
     };
@@ -153,7 +154,6 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
         stunum = intent.getStringExtra("usernum");
 
         manager = getSupportFragmentManager();
-        transaction = manager.beginTransaction();
 
         final String strUrl = getResources().getString(R.string.fp_showcourselist_url);
         HashMap<String, String> params = null;
@@ -179,13 +179,6 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
         final HashMap<String, String> params = new HashMap<>();
         params.put("student", stunum);
         params.put("course", course);
-
-        // 异步GET请求
-        try {
-            OkHttpUtils.doGetAsync(strUrl, params, takenhandler);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         // 同步GET请求
         new Thread(new Runnable() {
