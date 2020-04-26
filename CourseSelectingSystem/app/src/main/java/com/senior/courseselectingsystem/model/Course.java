@@ -5,18 +5,28 @@ import android.os.Parcelable;
 
 public class Course implements Parcelable {
 
+    private String num;
     private String name;
     private String descrip;
     private String teacher;
     private int uplimit;
     private int chosen;
 
-    public Course(String name, String descrip, String teacher, int uplimit, int choosen) {
+    public Course(String num, String name, String descrip, String teacher, int uplimit, int chosen) {
+        this.num = num;
         this.name = name;
         this.descrip = descrip;
         this.teacher = teacher;
         this.uplimit = uplimit;
-        this.chosen = choosen;
+        this.chosen = chosen;
+    }
+
+    public String getNum() {
+        return num;
+    }
+
+    public void setNum(String num) {
+        this.num = num;
     }
 
     public String getName() {
@@ -86,7 +96,8 @@ public class Course implements Parcelable {
         @Override
         public Course createFromParcel(Parcel parcel) {
             // 必须按成员变量声明的顺序读取数据，不然会出现获取数据出错
-            Course course = new Course();
+            Course course = new Course(parcel.readString(), parcel.readString(),parcel.readString(),parcel.readString(),parcel.readInt(),parcel.readInt());
+            course.setNum(parcel.readString());
             course.setName(parcel.readString());
             course.setDescrip(parcel.readString());
             course.setTeacher(parcel.readString());

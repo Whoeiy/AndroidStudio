@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.senior.courseselectingsystem.model.User;
+import com.senior.courseselectingsystem.student.StudentActivity;
 import com.senior.courseselectingsystem.utils.OkHttpUtils;
 
 import java.util.HashMap;
@@ -46,11 +47,11 @@ public class LoginActivity extends AppCompatActivity {
             // 跳转
             if(str[0].equals("登录成功")){
                 Intent intent = null;
-                if(str[1].equals("0")){
-                    intent = new Intent(LoginActivity.this, TeacherActivity.class);
-                }
                 if(str[1].equals("1")){
                     intent = new Intent(LoginActivity.this, TeacherActivity.class);
+                }
+                if(str[1].equals("2")){
+                    intent = new Intent(LoginActivity.this, StudentActivity.class);
                 }
                 intent.putExtra("usernum", mUser.getNum());     //将usernum传给对应的activity中
                 startActivity(intent);

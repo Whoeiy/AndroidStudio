@@ -7,6 +7,8 @@
     <string name="fp_login_url">http://192.168.0.103:8080/SelectingSys/LoginServlet</string>
     <string name="fp_addcourse_url">http://192.168.0.103:8080/SelectingSys/AddCourseServlet</string>
     <string name="fp_showcourselist_url">http://192.168.0.103:8080/SelectingSys/ShowCourseListServlet</string>
+    <string name="fp_iscoursetaken_url">http://192.168.0.103:8080/SelectingSys/IsCrsTakenServlet</string>
+    <string name="fp_addchoose_url">http://192.168.0.103:8080/SelectingSys/AddChooseServlet</string>
 
 
     <!--welcome-->
@@ -40,4 +42,12 @@
     <string name="crsdescrip">课程简介</string>
     <string name="title_activity_student">StudentActivity</string>
     <string name="title_dashboard">Dashboard</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="fg_course_name">课程名称：</string>
+    <string name="fg_course_teacher">授课教师：</string>
+    <string name="fg_course_descrip">课程简介：</string>
+    <string name="fg_course_uplimit">课程人数：</string>
+    <string name="fg_course_chosen">已选人数：</string>
+    <string name="fg_course_btn">选择本课程</string>
 </resources>

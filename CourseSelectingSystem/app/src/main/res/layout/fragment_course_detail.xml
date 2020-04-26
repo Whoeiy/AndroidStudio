@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".student.CourseDetailFragment">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="课程详情"
+            android:textSize="32sp"
+            android:textColor="@color/button"
+            android:textStyle="bold"
+            android:id="@+id/welcome_register_interface_title"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_below="@id/welcome_register_interface_title"
+            android:id="@+id/admin_add_drink_info" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#eee" />
+
+            <!-- Name -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="40dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/fg_course_name"
+                    android:textSize="18dp"
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:id="@+id/tv_detail_name"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="18dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/tv_detail_name"
+                    android:id="@+id/fg_detail_name"/>
+            </RelativeLayout>
+
+            <!-- Teacher -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/fg_course_teacher"
+                    android:textColor="#000000"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:id="@+id/tv_detail_teacher"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="18dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/tv_detail_teacher"
+                    android:id="@+id/fg_detail_teacher"/>
+            </RelativeLayout>
+
+            <!-- Description -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/fg_course_descrip"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:id="@+id/tv_detail_descrip"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="18dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/tv_detail_descrip"
+                    android:id="@+id/fg_detail_descrip"/>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#eee" />
+
+
+
+
+
+            <!-- Chosen -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/fg_course_chosen"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:id="@+id/tv_detail_chosen"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="18dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/tv_detail_chosen"
+                    android:id="@+id/fg_detail_chosen"/>
+            </RelativeLayout>
+
+            <!-- Uplimit -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/fg_course_uplimit"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:id="@+id/tv_detail_uplimit"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="18dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/tv_detail_uplimit"
+                    android:id="@+id/fg_detail_uplimit"/>
+            </RelativeLayout>
+
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:background="#eee" />-->
+
+            <!-- Add -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="@string/fg_course_btn"
+                android:textSize="16sp"
+                android:textColor="@color/button"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:id="@+id/fg_detail_btn" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

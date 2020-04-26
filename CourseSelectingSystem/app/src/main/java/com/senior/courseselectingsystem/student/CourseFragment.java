@@ -13,10 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.senior.courseselectingsystem.R;
-import com.senior.courseselectingsystem.student.dummy.DummyContent;
-import com.senior.courseselectingsystem.student.dummy.DummyContent.DummyItem;
+import com.senior.courseselectingsystem.model.Course;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * A fragment representing a list of Items.
@@ -31,6 +30,7 @@ public class CourseFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private ArrayList<Course> mCourses;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -54,7 +54,9 @@ public class CourseFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+//            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            mCourses = getArguments().getParcelableArrayList("courses");
+
         }
     }
 
@@ -72,7 +74,7 @@ public class CourseFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyCourseRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyCourseRecyclerViewAdapter(mCourses, mListener));
         }
         return view;
     }
@@ -95,6 +97,12 @@ public class CourseFragment extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onResume() {
+        // 更新view
+        super.onResume();
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -107,6 +115,6 @@ public class CourseFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Course item);
     }
 }
