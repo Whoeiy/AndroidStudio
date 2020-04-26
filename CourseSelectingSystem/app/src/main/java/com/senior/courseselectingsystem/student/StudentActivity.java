@@ -176,7 +176,7 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
 
 
         final String strUrl = getResources().getString(R.string.fp_iscoursetaken_url);
-        HashMap<String, String> params = new HashMap<>();
+        final HashMap<String, String> params = new HashMap<>();
         params.put("student", stunum);
         params.put("course", course);
 
@@ -186,6 +186,26 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // 同步GET请求
+        new Thread(new Runnable() {
+
+            String result = null;
+
+            @Override
+            public void run() {
+
+                try{
+                    result = OkHttpUtils.doGetSync(strUrl, params);
+                }catch(Exception e){
+                    Toast.makeText(StudentActivity.this, e.toString(), Toast.LENGTH_SHORT);
+                }
+
+                Message msg = myhandler.obtainMessage();
+                msg.obj = result;
+                takenhandler.sendMessage(msg);
+            }
+        }).start();
     }
 
     @Override
@@ -196,16 +216,27 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
 //        System.out.println(strBeginDate);  //2017-10-20 11:59:23
 
         final String strUrl = getResources().getString(R.string.fp_addchoose_url);
-        HashMap<String, String> params = new HashMap<>();
+        final HashMap<String, String> params = new HashMap<>();
         params.put("course", course);
         params.put("student", stunum);
         params.put("datetime", strBeginDate);
 
-        // 异步GET请求
-        try {
-            OkHttpUtils.doGetAsync(strUrl, params, myhandler);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // 同步POST请求
+        new Thread(new Runnable() {
+
+            String result = null;
+            @Override
+            public void run() {
+                try{
+                    result = OkHttpUtils.doPostSync(strUrl, params);
+                }catch(Exception e){
+                    Toast.makeText(StudentActivity.this, e.toString(), Toast.LENGTH_SHORT);
+                }
+
+                Message msg = myhandler.obtainMessage();
+                msg.obj = result;
+                choosehandler.sendMessage(msg);
+            }
+        }).start();
     }
 }
