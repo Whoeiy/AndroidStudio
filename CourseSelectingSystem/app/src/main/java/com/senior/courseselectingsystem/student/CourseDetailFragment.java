@@ -101,8 +101,6 @@ public class CourseDetailFragment extends Fragment {
                 }
             });
         }
-
-
         return view;
     }
 

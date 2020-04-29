@@ -54,7 +54,9 @@ public class CourseFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-//            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+            if(mCourses != null){
+                mCourses.clear();
+            }
             mCourses = getArguments().getParcelableArrayList("courses");
 
         }

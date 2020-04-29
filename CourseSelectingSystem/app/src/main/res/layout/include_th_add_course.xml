@@ -120,5 +120,7 @@
             android:layout_marginTop="40dp"
             android:id="@+id/add_course_btn" />
 
+        <include layout="@layout/include_btn_assist" />
+        
     </LinearLayout>
 </RelativeLayout>

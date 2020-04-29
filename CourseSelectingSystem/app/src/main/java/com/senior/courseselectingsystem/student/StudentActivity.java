@@ -10,6 +10,8 @@ import com.senior.courseselectingsystem.R;
 import com.senior.courseselectingsystem.TeacherActivity;
 import com.senior.courseselectingsystem.model.Course;
 import com.senior.courseselectingsystem.model.User;
+import com.senior.courseselectingsystem.service.AddAudioService;
+import com.senior.courseselectingsystem.service.ChooseAudioService;
 import com.senior.courseselectingsystem.utils.OkHttpUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,7 @@ import android.os.Message;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -42,6 +45,7 @@ import java.util.List;
 public class StudentActivity extends AppCompatActivity implements CourseFragment.OnListFragmentInteractionListener, CourseDetailFragment.OnFragmentInteractionListener {
     private TextView mTextMessage;
     private Fragment mCourseFragment;
+    private Button mPlay;
     private FragmentManager manager;
 
     private String stunum, backstr;
@@ -58,10 +62,12 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mCrsListLayout.setVisibility(View.VISIBLE);
-//                    mMyCrsLayout.setVisibility(View.GONE);
+                    final String strrUrl = getResources().getString(R.string.fp_showcourselist_url);
+                    showMyCourseList(stunum, strrUrl, myhandler);
                     return true;
                 case R.id.navigation_notifications:
-//                    mTextMessage.setText(R.string.title_notifications);
+                    final String strUrl = getResources().getString(R.string.fp_showmycourselist_url);
+                    showMyCourseList(stunum, strUrl, myhandler);
                     return true;
             }
             return false;
@@ -128,12 +134,41 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
         @Override
         public void handleMessage(@NonNull Message msg) {
             if(msg.obj != null){
-                backstr = msg.obj.toString();
+                String tmp = (String) msg.obj;
+                String[] strarr = tmp.split("&");
+                try {
+                    //jsonArrayString --> JsonArray
+                    ArrayList<Course> courses = new ArrayList<Course>();
+                    JSONArray jsonArray = new JSONArray(strarr[0]);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject course = (JSONObject) jsonArray.get(i);
+                        String num = course.getString("num");
+                        String name = course.getString("name");
+                        String descrip = course.getString("description");
+                        String teacher = course.getString("teacher");
+                        int uplimit = course.getInt("uplimit");
+                        int chosen = course.getInt("choosen");
+                        Course crs = new Course(num, name, descrip, teacher, uplimit, chosen);
+                        courses.add(crs);
+                    }
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelableArrayList("courses", courses);
+
+                    CourseFragment courseFragment = new CourseFragment();
+                    courseFragment.setArguments(bundle);
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    transaction.add(R.id.container_for_fragment, courseFragment).addToBackStack(null).commit();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                backstr = strarr[1];
                 Toast.makeText(StudentActivity.this, backstr, Toast.LENGTH_SHORT).show();
+
             }else{
                 Toast.makeText(StudentActivity.this, "网络繁忙！", Toast.LENGTH_SHORT).show();
             }
-            getSupportFragmentManager().popBackStack();
+
+//            getSupportFragmentManager().popBackStack();
         }
     };
 
@@ -153,9 +188,31 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
         Intent intent = getIntent();
         stunum = intent.getStringExtra("usernum");
 
+        mPlay = (Button) findViewById(R.id.assist_btn);
+        mPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StudentActivity.this, ChooseAudioService.class);
+                startService(intent);
+            }
+        });
+
         manager = getSupportFragmentManager();
 
         final String strUrl = getResources().getString(R.string.fp_showcourselist_url);
+//        HashMap<String, String> params = null;
+//
+//        // 异步GET请求
+//        try {
+//            OkHttpUtils.doGetAsync(strUrl, params, myhandler);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+        showCourseList(strUrl, myhandler);
+    }
+
+    public static void showCourseList(String strUrl, Handler myhandler){
         HashMap<String, String> params = null;
 
         // 异步GET请求
@@ -165,6 +222,19 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
             e.printStackTrace();
         }
     }
+
+    public static void showMyCourseList(String stunum, String strUrl, Handler myhandler){
+        HashMap<String, String> params = new HashMap<>();
+        params.put("student", stunum);
+
+        // 异步GET请求
+        try {
+            OkHttpUtils.doGetAsync(strUrl, params, myhandler);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void onListFragmentInteraction(Course item) {
@@ -206,7 +276,6 @@ public class StudentActivity extends AppCompatActivity implements CourseFragment
 
         DateFormat dateTimeformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String strBeginDate = dateTimeformat.format(new Date());
-//        System.out.println(strBeginDate);  //2017-10-20 11:59:23
 
         final String strUrl = getResources().getString(R.string.fp_addchoose_url);
         final HashMap<String, String> params = new HashMap<>();

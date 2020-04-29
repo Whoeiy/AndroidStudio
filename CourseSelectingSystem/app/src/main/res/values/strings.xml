@@ -6,7 +6,9 @@
     <string name="fp_register_url">http://192.168.0.103:8080/SelectingSys/RegisterServlet</string>
     <string name="fp_login_url">http://192.168.0.103:8080/SelectingSys/LoginServlet</string>
     <string name="fp_addcourse_url">http://192.168.0.103:8080/SelectingSys/AddCourseServlet</string>
+    <string name="fp_uploadfile_url">http://192.168.0.103:8080/SelectingSys/UplodFileServlet</string>
     <string name="fp_showcourselist_url">http://192.168.0.103:8080/SelectingSys/ShowCourseListServlet</string>
+    <string name="fp_showmycourselist_url">http://192.168.0.103:8080/SelectingSys/ShowMyCourseServlet</string>
     <string name="fp_iscoursetaken_url">http://192.168.0.103:8080/SelectingSys/IsCrsTakenServlet</string>
     <string name="fp_addchoose_url">http://192.168.0.103:8080/SelectingSys/AddChooseServlet</string>
 
@@ -33,8 +35,10 @@
     <string name="forget_pass">注册</string>
     <string name="title_activity_admin_func">AdminFuncActivity</string>
     <string name="title_home">申请课程</string>
-    <string name="title_notifications">我的课程</string>
+    <string name="title_notifications">上传文件</string>
     <string name="title_activity_teacher">TeacherActivity</string>
+    <string name="stu_title_home">选择课程</string>
+    <string name="stu_title_notifications">我的课程</string>
 
     <!-- teacher - add course interface -->
     <string name="crsname">课程名称</string>

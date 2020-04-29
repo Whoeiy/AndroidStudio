@@ -49,7 +49,6 @@ public class RegisterActivity extends AppCompatActivity {
     Handler myhandler  = new Handler(){
         @Override
         public void handleMessage(Message msg) {
-//            tv_res.setText(msg.obj.toString());
             backstr = msg.obj.toString();
             Toast.makeText(RegisterActivity.this, backstr, Toast.LENGTH_SHORT).show();
             if(backstr.equals("注册成功")){

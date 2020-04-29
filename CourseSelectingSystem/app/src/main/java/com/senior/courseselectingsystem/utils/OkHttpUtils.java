@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -11,6 +12,8 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -23,7 +26,7 @@ public class OkHttpUtils {
     /**
      * 同步get请求，必须在子线程中执行http请求
      * @param strUrl
-     * @param HashMap<String,String>
+     * @param params
      * @return
      * @throws Exception
      */
@@ -112,7 +115,7 @@ public class OkHttpUtils {
     /**
      * 异步get请求: 必须在子线程中执行http请求
      * @param strUrl
-     * @param HashMap
+     * @param params
      * @param myhandler
      */
     public static void doGetAsync(String strUrl, HashMap<String, String> params, final Handler myhandler){
@@ -216,4 +219,50 @@ public class OkHttpUtils {
             }
         });
     }
+
+    public static void doUploadPostAsync(String strUrl, String path, final Handler myhandler){
+        result = null;
+
+        String filename = path.substring(path.lastIndexOf("/") + 1, path.length());
+        File file = new File(path);
+        MediaType contentType = MediaType.parse("multipart/form-data"); // 上传文件的Content-Type
+        RequestBody filebody = RequestBody.create(contentType, file); // 上传文件的请求体
+        RequestBody formbody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("file", filename, filebody)
+                .build();
+        // 创建request对象
+        Request request = new Request.Builder()
+                .url(strUrl)
+                .post(formbody)
+                .build();
+
+        // 创建OKHttpClient客户端
+        OkHttpClient client = new OkHttpClient();
+
+        // 获取Response：在子线程中完成
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if(response.isSuccessful()){
+                    // 获取响应结果
+                    result = response.body().string();
+                    Log.i("===result", result);
+                }else{
+                    throw new IOException(("Unexpected code: " + response.code() + "--" + response.message()));
+                }
+
+                // 向主线程传递响应结果
+                Message msg = myhandler.obtainMessage();
+                msg.obj = result;
+                myhandler.sendMessage(msg);
+            }
+        });
+    }
 }
+
